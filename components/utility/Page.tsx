@@ -1,8 +1,9 @@
 import Footer from "../global/Footer";
 import Head from "next/head";
+import Script from "next/script"; // ✅ Importar Script
 import MobileNavbar from "../global/MobileNavbar";
 import Navbar from "../global/Navbar";
-import React, { ReactChildren } from "react";
+import React from "react";
 
 function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
   const pageTitle = `${
@@ -11,6 +12,7 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
       : `${currentPage} - Camilo Sánchez`
   }`;
   console.log(currentPage);
+  
   return (
     <div
       className="w-full m-auto flex flex-col items-center justify-center min-h-screen opening-box-animate-paddin text-white overflow-hidden md:overflow-visible"
@@ -22,19 +24,19 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/static/favicon/apple-touch-icon.png"
+          href="/static/logos/logo.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/static/favicon/favicon-32x32.png"
+          href="/static/logos/logo.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/static/favicon/favicon-16x16.png"
+          href="/static/logos/logo.png"
         />
         <link rel="manifest" href="/static/favicon/site.webmanifest" />
         <meta name="title" content={pageTitle} />
@@ -57,38 +59,42 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
           property="twitter:image"
           content=""
         ></meta>
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KC3CN7V');`,
-          }}
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-                page_path: window.location.pathname,
-              });
-          `,
-          }}
-        />
       </Head>
+
+      {/* ✅ Scripts corregidos usando next/script */}
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
+
+      {/* ✅ Google Tag Manager corregido */}
+      <Script id="google-tag-manager" strategy="afterInteractive">
+        {`
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-KC3CN7V');
+        `}
+      </Script>
+
+      {/* ✅ Noscript para GTM (este sí puede quedarse igual) */}
       <noscript
         dangerouslySetInnerHTML={{
           __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC3CN7V"
-height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
         }}
-      ></noscript>
+      />
 
       <main className="p-5 w-full flex-1 text-center">
         <div className="hidden sm:block z-100">
@@ -112,5 +118,5 @@ type PageProps = {
     title?: string;
     desc: string;
   };
-  children?: JSX.Element | JSX.Element[];
+  children?: React.ReactNode;
 };

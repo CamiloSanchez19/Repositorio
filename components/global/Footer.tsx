@@ -25,7 +25,7 @@ function Footer() {
                         >
                           {item.icon && (
                             <span className="pr-2 -mb-1">
-                              <Image src={item.icon} width={20} height={20} />
+                              <Image src={item.icon} width={20} height={20} alt={item.name} />
                             </span>
                           )}
                           {item.name}
@@ -78,7 +78,7 @@ function Footer() {
         </div>
       </div>
       <div className="max-w-4xl w-full m-auto mt-8 pt-8 sm:mt-4 sm:pt-4 text-center text-fun-gray border-t border-fun-pink-dark">
-        <p className="flex flex-col items-center justify-center ">
+        <div className="flex flex-col items-center justify-center ">
           <div className="inline-flex items-center uppercase text-xs font-bold tracking-widest">
             Hecho con{" "}
             <div className="space-x-2 inline-flex items-center -mt-1 ml-3">
@@ -119,7 +119,7 @@ function Footer() {
             </a>
             . Todos los derechos reservados.
           </div>
-        </p>
+        </div>
       </div>
       <div className="mt-8 text-center sm:text-right sm:-mt-12">
         <a

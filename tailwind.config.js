@@ -1,9 +1,15 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  mode: "jit",
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: false, // or 'media' or 'class'
+  // Elimina 'mode: "jit"' - JIT ahora es por defecto
+  // Reemplaza 'purge' con 'content'
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}" // Si estás usando App Router
+  ],
+  // Elimina o cambia darkMode: false
+  darkMode: 'media', // o 'class' si quieres modo oscuro basado en clase
   theme: {
     fontFamily: {
       sans: ["Be Vietnam Pro", "Inter", "system-ui", "sans"],
@@ -20,7 +26,7 @@ module.exports = {
       green: colors.green,
       orange: colors.orange,
       purple: colors.purple,
-    pink: colors.pink,
+      pink: colors.pink,
     },
     extend: {
       colors: {
@@ -54,10 +60,8 @@ module.exports = {
       }
     },
   },
-  variants: {
-    extend: {},
-  },
+  // Elimina la sección 'variants' - ya no es necesaria
   plugins: [
     require('@tailwindcss/forms'),
   ],
-};
+}

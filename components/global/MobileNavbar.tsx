@@ -63,11 +63,12 @@ export default function MobileNavbar() {
           {routes.map((item, index) => {
             return (
               <li
+                key={index}
                 className="border-b border-gray-900 text-gray-100 text-sm font-semibold"
                 style={{ transitionDelay: `${150 + index * 25}ms` }}
               >
-                <Link href={item.path}>
-                  <a className="flex w-auto pb-4">{item.title}</a>
+                <Link href={item.path} className="flex w-auto pb-4">
+                  {item.title}
                 </Link>
               </li>
             );
