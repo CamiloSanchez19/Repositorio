@@ -15,7 +15,7 @@ function Hero() {
           <img
             className="sqD squiggle-hero-html w-16 top-[-90px] right-[5%] sm:top-[-90px] sm:right-[170px]"
             style={{ animationDelay: "0.1s" }}
-            src="/static/doodles/hero/html.svg"
+            src="/static/doodles/hero/bd.png"
           />
           <img
             className="sqD squiggle-hero-nextjs hidden top-[75px] right-0 w-11"
@@ -23,9 +23,9 @@ function Hero() {
             src="/static/doodles/hero/nextjs.svg"
           />
           <img
-            className="sqD bottom-[-300px] -right-1/4 sm:right-[-20%] lg:bottom-[-310px] lg:right-[-120px] w-[220px]"
+            className="sqD bottom-[-300px] -right-1/4 sm:right-[-20%] lg:bottom-[-310px] lg:right-[-120px] w-[400px]"
             style={{ animationDelay: "0.3s" }}
-            src="/static/doodles/skills/laptop.svg"
+            src="/static/doodles/hero/nombre.png"
           />
           <img
             className="sqD hidden sm:block bottom-[-340px] left-[-180px]"
@@ -35,7 +35,7 @@ function Hero() {
           <img
             className="sqD hidden sm:block left-[100px] lg:left-[160px] bottom-[-150px]"
             style={{ animationDelay: "0.5s" }}
-            src="/static/doodles/hero/js.svg"
+            src="/static/doodles/hero/ia.png"
           />
           <img
             className="sqD bottom-[-320px] right-[65%] sm:right-[45%]"

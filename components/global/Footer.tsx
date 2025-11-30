@@ -42,13 +42,13 @@ function Footer() {
         })}
         <div className="text-center col-span-2 sm:col-auto sm:text-left pt-8 sm:mt-0 sm:pt-0 text-fun-gray border-t border-fun-pink-dark sm:border-0">
           <h4 className="uppercase text-fun-gray text-sm font-bold">
-            Apoya mi trabajo
+            Contacto
           </h4>
           <div className="space-y-2 mt-4 w-full flex items-center sm:items-start flex-col">
             {footer.support.buymeacoffee !== "" && (
               <div>
                 <a
-                  href="https://buymeacoffee.com/"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=scamilosanchez1941@gmail.com"
                   target="_blank"
                 >
                   <img
@@ -112,7 +112,7 @@ function Footer() {
           <div className="mt-2 text-xs ">
             Creado por{" "}
             <a
-              href="scamilosanchez1941@gmail.com"
+              href="https://www.linkedin.com/in/camilo-s%C3%A1nchez-roncancio-0b7717274/"
               className="text-fun-gray-light font-medium"
             >
               Camilo Sánchez
@@ -124,7 +124,7 @@ function Footer() {
       <div className="mt-8 text-center sm:text-right sm:-mt-12">
         <a
           className="w-auto inline-flex items-center sm:w-auto font-bold flex-shrink text-xs border border-fun-pink px-4 py-2 rounded-xl text-fun-pink cursor-pointer opacity-50"
-          href="https://github.com/braydentw/braydentw.io"
+          href="https://github.com/CamiloSanchez19/Respositorio-Camilo-Sanchez"
           target="_blank"
           rel="nooreferrer"
         >

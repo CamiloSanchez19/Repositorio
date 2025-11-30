@@ -80,13 +80,13 @@ export const footer: Footer = {
         },
         {
           name: "LinkedIn",
-          link: "www.linkedin.com/in/camilo-sánchez-roncancio-0b7717274",
+          link: "https://www.linkedin.com/in/camilo-s%C3%A1nchez-roncancio-0b7717274/",
           icon: "/static/icons/linkedin-f.svg",
           leavesWebsite: true,
         },
         {
           name: "Email",
-          link: "scamilosanchez1941gmail.com",
+          link: "https://mail.google.com/mail/u/0/?fs=1&to=scamilosanchez1941@gmail.com&tf=cm",
           icon: "/static/icons/mail-f.svg",
           leavesWebsite: true,
         },
@@ -96,6 +96,6 @@ export const footer: Footer = {
   support: {
     buymeacoffee: "camilo",
     paypal: "camilo",
-    message: "I appreciate your support very much! 💙",
+    message: "Escríbeme con un solo clic 😎",
   },
 };
