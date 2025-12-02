@@ -33,9 +33,9 @@ function Hero() {
             src="/static/doodles/hero/coder.svg"
           />
           <img
-            className="sqD hidden sm:block left-[100px] lg:left-[160px] bottom-[-150px]"
+            className="sqD hidden sm:block left-[100px] lg:left-[160px] bottom-[-210px]"
             style={{ animationDelay: "0.5s" }}
-            src="/static/doodles/hero/ia.png"
+            src="/static/doodles/hero/rocket.png"
           />
           <img
             className="sqD bottom-[-320px] right-[65%] sm:right-[45%]"
